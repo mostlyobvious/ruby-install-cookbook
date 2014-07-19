@@ -1,8 +1,2 @@
-#
-# Cookbook Name:: ruby
-# Recipe:: default
-#
-# Copyright (C) 2014 
-#
-# 
-#
+ruby "2.1.2" do
+end
