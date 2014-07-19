@@ -1,4 +1,4 @@
-name             'ruby'
+name             'ruby_install'
 maintainer       ''
 maintainer_email ''
 license          ''

@@ -1,2 +1,2 @@
-ruby "2.1.2" do
+ruby_install "2.1.2" do
 end
