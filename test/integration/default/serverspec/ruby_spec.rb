@@ -5,7 +5,7 @@ include Serverspec::Helper::DetectOS
 
 RSpec.configure do |c|
   c.before :all do
-    c.path = '/sbin:/usr/sbin'
+    c.path = '/sbin:/usr/sbin:/home/vagrant/ruby-2.1.2/bin'
   end
 end
 
