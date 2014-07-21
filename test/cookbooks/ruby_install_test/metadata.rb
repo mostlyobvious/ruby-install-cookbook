@@ -1,0 +1,8 @@
+name             'ruby_install_test'
+maintainer       ''
+maintainer_email ''
+license          ''
+description      'Installs/Configures ruby_install_test'
+long_description 'Installs/Configures ruby_install_test'
+version          '0.1.0'
+depends          'ruby_install'
