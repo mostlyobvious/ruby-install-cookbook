@@ -19,4 +19,8 @@ describe 'Ruby installation' do
     expect(file(destination.join('bin/gem'))).to  be_file
   end
 
+  it 'installs desired ruby version' do
+    expect(command(destination.join('bin/ruby -v'))).to return_stdout(/2.1.2/)
+  end
+
 end
