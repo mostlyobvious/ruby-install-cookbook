@@ -26,5 +26,5 @@ def download_source
 end
 
 def ruby_version
-  new_resource.name
+  new_resource.version
 end
