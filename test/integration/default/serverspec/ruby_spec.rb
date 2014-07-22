@@ -5,14 +5,15 @@ include Serverspec::Helper::DetectOS
 
 RSpec.configure do |c|
   c.before :all do
-    c.path = '/sbin:/usr/sbin:/home/vagrant/ruby-2.1.2/bin'
+    c.path = '/sbin:/usr/sbin'
   end
 end
 
-describe "Ruby installation" do
+describe 'Ruby installation' do
+  let(:destination) { '/opt/ruby' }
 
-  it "it has a ruby binary" do
-    expect(command('ruby -v')).to return_exit_status(0)
+  it 'unpacks Ruby build at destination directory' do
+    expect(file(destination)).to be_directory
   end
 
 end

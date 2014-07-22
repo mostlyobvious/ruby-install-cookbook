@@ -1,4 +1,4 @@
-ruby_install "2.1.2" do
+ruby_install '2.1.2' do
+  destination '/opt/ruby'
   action :create
-  destination "/home/vagrant/ruby-2.1.2"
 end
