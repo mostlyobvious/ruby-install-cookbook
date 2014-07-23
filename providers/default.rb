@@ -21,6 +21,11 @@ def install_ruby
     creates ruby_dir
   end
 
+  execute "Remove borked cache symlink" do
+    command "find #{ruby_dir} -type l -xtype l -exec rm {} \\;"
+    not_if { ::File.exist?(destination_dir) }
+  end
+
   execute "Copy Ruby to destination" do
     command "cp -r #{ruby_dir} #{destination_dir}"
     creates destination_dir
@@ -33,11 +38,8 @@ end
 
 def install_rubygems
   execute "Install Rubygems" do
-    command     "gem update --system #{rubygems_version}"
-    environment "PATH"     => bin_dir,
-                "GEM_HOME" => `#{ruby_bin} -e "print Gem.paths.home"`
-
-    not_if { `#{ruby_bin} -e "print Gem::VERSION"` == rubygems_version }
+    command "#{gem_bin} update --system #{rubygems_version}"
+    not_if { `#{gem_bin} -v`.strip == rubygems_version  }
   end
 end
 
