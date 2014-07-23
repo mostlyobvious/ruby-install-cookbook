@@ -1,4 +1,4 @@
-action :create do
+action :install do
   install_ruby
   install_ruby_dependencies
   install_rubygems
